@@ -2,24 +2,24 @@
 
 This repository contains a PyTorch implementation of the paper:
 
-[SWALP : Stochastic Weight Averaging for Low-Precision Training (SWALP)](https://arxiv.org/abs/1904.11943). 
+[SWALP : Stochastic Weight Averaging for Low-Precision Training (SWALP)](https://arxiv.org/abs/1904.11943).
 
-[Guandao Yang](http://www.guandaoyang.com), 
-[Tianyi Zhang](https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F5oL2dqrt5Dli21O3seTVse8viKdodY4EQrZp8EV0BUpG5s1brVEPMWVunGQizs0Lltdmn5cPooQHA77vDxymqIITnUUL-GRlYglybFcTnDURbvEss&user=OI0HSa0AAAAJ#), 
-Polina Kirichenko, Junwen Bai, 
-[Andrew Gordon Wilson](https://people.orie.cornell.edu/andrew/), 
+[Guandao Yang](http://www.guandaoyang.com),
+[Tianyi Zhang](https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F5oL2dqrt5Dli21O3seTVse8viKdodY4EQrZp8EV0BUpG5s1brVEPMWVunGQizs0Lltdmn5cPooQHA77vDxymqIITnUUL-GRlYglybFcTnDURbvEss&user=OI0HSa0AAAAJ#),
+Polina Kirichenko, Junwen Bai,
+[Andrew Gordon Wilson](https://people.orie.cornell.edu/andrew/),
 [Christopher De Sa](http://www.cs.cornell.edu/~cdesa/)
 
 ![swalp-image](assets/swalp.jpg)
 
 ## Introduction
 
-Low precision operations can provide scalability, memory savings, portability, and energy efficiency. 
-This paper proposes SWALP, an approach to low precision training that averages low-precision SGD iterates with a modified learning rate schedule. 
+Low precision operations can provide scalability, memory savings, portability, and energy efficiency.
+This paper proposes SWALP, an approach to low precision training that averages low-precision SGD iterates with a modified learning rate schedule.
 SWALP is easy to implement and can match the performance of *full-precision* SGD even with all numbers quantized down to 8 bits, including the gradient accumulators.
-Additionally, we show that SWALP converges arbitrarily close to the optimal solution for quadratic objectives, and to a noise ball asymptotically smaller than low precision SGD in strongly convex settings. 
+Additionally, we show that SWALP converges arbitrarily close to the optimal solution for quadratic objectives, and to a noise ball asymptotically smaller than low precision SGD in strongly convex settings.
 
-This repo contains the codes to replicate our experiment for CIFAR datasets with VGG16 and PreResNet164. 
+This repo contains the codes to replicate our experiment for CIFAR datasets with VGG16 and PreResNet164.
 
 ## Citing this Work
 Please cite our work if you find this approach useful in your research:
@@ -66,6 +66,10 @@ The full-precision results (SGD-FP and SWA-FP) are produced by running the SWA r
 |          | PreResNet164 | 4.63±0.18  | 4.03±0.10  |            |            |
 | CIFAR100 | VGG16        | 27.23±0.17 | 25.93±0.21 | 29.59±0.32 | 26.65±0.29 |
 |          | PreResNet164 | 22.20±0.57 | 19.95±0.19 |            |            |
+
+## Other implementations
+
+Tianyi Zhang provides an implementation using a low-precision training framework [QPyTorch](https://github.com/Tiiiger/QPyTorch) in this [link](https://github.com/Tiiiger/QPyTorch/tree/master/examples/SWALP).
 
 ## References
 We use the [SWA repo](https://github.com/timgaripov/swa/) as starter template.
